@@ -5,8 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/backgroundImage"
-android:background="@drawable/group559"
+android:background="@drawable/rain"
     tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/songTheme"
+        android:layout_width="89dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rectanglerain"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/songList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_iconnew"
+            tools:ignore="VectorDrawableCompat" />
+
+        <Button
+            android:id="@+id/playbutton"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="35dp"
+            />
+
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -15,23 +50,16 @@ android:background="@drawable/group559"
         android:layout_height="49dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="404dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/temp"
+        app:layout_constraintBottom_toTopOf="@id/temp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingRight="10dp"
-            app:srcCompat="@drawable/sign2" />
+        app:layout_constraintVertical_bias="0.097">
 
 
         <!--        <EditText-->
@@ -50,11 +78,10 @@ android:background="@drawable/group559"
             android:layout_width="362dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:fontFamily="@font/robotoslablight"
+            android:fontFamily="@font/robotoslabregular"
             android:hint="Cochin"
             android:inputType="textPersonName"
             android:paddingTop="7dp"
-
             android:textColor="@android:color/background_light" />
     </LinearLayout>
 
@@ -66,13 +93,13 @@ android:background="@drawable/group559"
         android:fontFamily=""
         android:text="27"
         android:textSize="78dp"
-        app:fontFamily="@font/robotoslablight"
+        app:fontFamily="@font/merriweatherlight"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/degree"
@@ -82,13 +109,14 @@ android:background="@drawable/group559"
         android:fontFamily=""
         android:text="&#xb0;C"
         android:textSize="78dp"
-        app:fontFamily="@font/robotoslablight"
+        app:fontFamily="@font/merriweatherlight"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -101,10 +129,10 @@ android:background="@drawable/group559"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165">
+        app:layout_constraintVertical_bias="0.778">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -117,20 +145,18 @@ android:background="@drawable/group559"
             android:id="@+id/humidity"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingRight="8dp"
             android:fontFamily="@font/robotoslablight"
+            android:paddingRight="8dp"
             android:text="40%"
-            android:textSize="15dp"
-            />
+            android:textSize="15dp" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingRight="2dp"
             android:fontFamily="@font/robotoslablight"
-            app:srcCompat="@drawable/sign3"
-            />
+            android:paddingRight="2dp"
+            app:srcCompat="@drawable/sign3" />
 
         <TextView
             android:id="@+id/clouds"
@@ -160,94 +186,48 @@ android:background="@drawable/group559"
 
     </LinearLayout>
 
-
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="410dp"
-        android:layout_height="71dp"
-        android:background="#C40E0E0E"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingTop="10dp"
-        android:paddingRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-        <ImageButton
-            android:id="@+id/songTheme"
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:background="@drawable/rectangle"
-            android:fontFamily="@font/poppinsbold"
-            android:padding="5dp"
-            android:paddingLeft="3dp"
-            android:text="File name"
-            android:textSize="9dp" />
-
-        <TextView
-            android:id="@+id/songName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppinsbold"
-            android:text="summer 1"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/playbutton"
-            android:layout_width="23dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="62dp"
-            android:layout_marginTop="12dp" />
-
-        <ImageButton
-            android:id="@+id/songList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="62dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/sign4" />
-    </LinearLayout>
-
-
     <TextView
         android:id="@+id/weatherTextView"
-        android:layout_width="371dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="184dp"
+        android:layout_width="365dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/robotoslablight"
+        android:text="Moderate Rain"
         android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundImage"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/coordTextView"
-        android:layout_width="359dp"
-        android:layout_height="68dp"
+        android:layout_width="148dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginLeft="263dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="300dp"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/weatherTextView"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/weatherTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weatherTextView"
         app:layout_constraintVertical_bias="1.0" />
 
 
+
+<!--    <TextView-->
+<!--        android:id="@+id/songName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppinsbold"-->
+<!--        android:text="summer 1"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:layout_editor_absoluteX="139dp"-->
+<!--        tools:layout_editor_absoluteY="677dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

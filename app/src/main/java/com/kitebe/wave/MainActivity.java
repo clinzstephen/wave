@@ -5,9 +5,14 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -33,6 +38,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,11 +57,13 @@ import java.util.List;
 import java.util.Locale;
 import android.view.View.OnKeyListener;
 
+import static com.kitebe.wave.App.CHANNEL_ID;
+
 public class MainActivity extends AppCompatActivity {
 //    EditText cityName;
     AutoCompleteTextView autoSuggestion;
     TextView weatherTextView,temp,humidty,wind,clouds;
-    TextView songName;
+   // TextView songName;
     TextView coordTextView;
     AudioManager audioManager;
     static MediaPlayer mediaPlayerRain,mediaPlayerRain2,mediaPlayerRain3,mediaPlayerRain4,mediaPlayerRain5;
@@ -64,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     static String weatherName;
     Button getWeatherButton,equilizer;
     String song1,song2,song3,song4,song5;
-    static ImageButton songTheme1;
+    static LinearLayout songTheme1;
      static Boolean intentBoolean=false;
 
     static String coordTempInformation;
@@ -240,14 +249,14 @@ public class MainActivity extends AppCompatActivity {
 
                     if (!jsonMain.equals("") && !description.equals("")){
 
-                        weatherInformation += jsonMain + ":" + description +"\r\n";
+                        weatherInformation += description;
                     }
 
 //                    if(main.equals("Haze")){
 //                   }
                 }
                 if(!weatherInformation.equals("")) {
-              //    weatherTextView.setText(weatherInformation);
+                 weatherTextView.setText(weatherInformation);
                 }else {
                     Toast.makeText(getApplicationContext(),"could not find weather Information :",Toast.LENGTH_LONG).show();
                 }
@@ -295,9 +304,13 @@ public class MainActivity extends AppCompatActivity {
 
                         // get image name from JSON
                         String image =jsonWeatherBackgroundContentPart.getString("image");
+                        String songThemeImage =jsonWeatherBackgroundContentPart.getString("songtheme");
+
 
                         // get resource id by image name
                         final int resourceImageId = resources.getIdentifier(image, "drawable", context.getPackageName());
+                        final int resourceSongThemeImageId = resources.getIdentifier(songThemeImage, "drawable", context.getPackageName());
+
 
                         // get resource id by song song
 
@@ -308,6 +321,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // backgroungImage.setImageResource(R.drawable.rain);
                         backgroungImage.setBackgroundResource(resourceImageId);
+                        songTheme1.setBackgroundResource(resourceSongThemeImageId);
 
                     }
 
@@ -330,7 +344,7 @@ public class MainActivity extends AppCompatActivity {
                     if(plname.equals(name)  ){
 
 
-                        songName.setText(plname);
+                      //  songName.setText(plname);
                           allprogress1 =playlistNameArrayPart.getInt("progress1");
                           allprogress2 =playlistNameArrayPart.getInt("progress2");
                           allprogress3 =playlistNameArrayPart.getInt("progress3");
@@ -380,6 +394,33 @@ public class MainActivity extends AppCompatActivity {
                         mediaPlayerRain5 = MediaPlayer.create(getApplicationContext(),resourceSongId5);
                         mediaPlayerRain5.start();
                         mediaPlayerRain5.setVolume(1 - log5, 1 - log5);
+
+
+                        //Notification
+
+                        RemoteViews collapsedView = new RemoteViews(getPackageName(),
+                                R.layout.notification_collapsed);
+                        RemoteViews expandedView = new RemoteViews(getPackageName(),
+                                R.layout.notification_expanded);
+
+                        Intent clickIntent = new Intent(MainActivity.this, NotificationReceiver.class);
+                        PendingIntent clickPendingIntent = PendingIntent.getBroadcast(MainActivity.this,
+                                0, clickIntent, 0);
+
+
+                        collapsedView.setTextViewText(R.id.text_view_collapsed_1, "Hello World!");
+
+                        expandedView.setImageViewResource(R.id.image_view_expanded, R.drawable.rectangle);
+                        expandedView.setOnClickPendingIntent(R.id.image_view_expanded, clickPendingIntent);
+
+                        Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+                                .setSmallIcon(R.drawable.logo)
+                                .setCustomContentView(collapsedView)
+                                .setCustomBigContentView(expandedView)
+                                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+                                .build();
+
+                        notificationManager.notify(1, notification);
 
 
                     }
@@ -533,10 +574,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private NotificationManagerCompat notificationManager;
+
+    public class NotificationReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "Image clicked", Toast.LENGTH_SHORT).show();
+
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+            notificationManager.cancel(1);
+        }
+    }
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        notificationManager = NotificationManagerCompat.from(this);
 
 //        Configuration config = getResources().getConfiguration();
 //        if (config.smallestScreenWidthDp >= 600) {
@@ -546,7 +604,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         songList = findViewById(R.id.songList);
-        songName = findViewById(R.id.songName);
+       // songName = findViewById(R.id.songName);
         songTheme1 = findViewById(R.id.songTheme);
         try {
             SecondActivity.imageId=R.drawable.rectangle;
@@ -791,7 +849,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     try {
-                        SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle);
+                        //SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle);
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -812,7 +870,7 @@ public class MainActivity extends AppCompatActivity {
 //                    SecondActivity.volumeSeekBar4.setProgress(90);
 //                    SecondActivity.volumeSeekBar5.setProgress(2);
                     try {
-                        SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle2);
+                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle2);
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -828,7 +886,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     try {
-                        SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle3);
+                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle3);
                     }catch (Exception e){
                         e.printStackTrace();
                     }

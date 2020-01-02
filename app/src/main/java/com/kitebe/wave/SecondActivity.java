@@ -49,7 +49,7 @@ public class SecondActivity extends Activity {
     static Button playButton;
     static int imageId;
    int newprogress1,newprogress2,newprogress3,newprogress4,newprogress5;
-   Button songList;
+   //Button songList;
    static ImageButton songTheme2;
    
 
@@ -60,7 +60,7 @@ public class SecondActivity extends Activity {
     int progress1,progress2,progress3,progress4,progress5;
     //saveMusic button
     Button saveMusic1,saveMusic2,saveMusic3,saveMusic4,saveMusic5,saveAll;
-   static Button playList1,playList2,playList3,playList4,playList5,playList6,playList7,playList8,playList9,playList10,playList11,playList12;
+   static Button playList1,playList2,playList3,playList4,playList5;
     boolean saveOption = false,saveOption2 = false,saveOption3 = false,saveOption4 = false,saveOption5 = false, sharedPreferenceValueBoolean=false;
     float currentVolume,currentVolume2,currentVolume3,currentVolume4,currentVolume5;
     //SharedPreferences sharedpreferencesexit;
@@ -146,15 +146,15 @@ public class SecondActivity extends Activity {
         volumeSeekBar4 = findViewById(R.id.volumeSeekBar4);
         volumeSeekBar5 = findViewById(R.id.volumeSeekBar5);
 
-        songList = findViewById(R.id.songList);
-        songList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                onBackPressed();
-
-            }
-        });
+//        songList = findViewById(R.id.songList);
+//        songList.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                onBackPressed();
+//
+//            }
+//        });
 
         backbutton = findViewById(R.id.backbutton);
 
@@ -203,13 +203,6 @@ public class SecondActivity extends Activity {
         playList3 = findViewById(R.id.playList3);
         playList4 = findViewById(R.id.playList4);
         playList5 = findViewById(R.id.playList5);
-        playList6 = findViewById(R.id.playList6);
-        playList7 = findViewById(R.id.playList7);
-        playList8 = findViewById(R.id.playList8);
-        playList9 = findViewById(R.id.playList9);
-        playList10 = findViewById(R.id.playList10);
-        playList11= findViewById(R.id.playList11);
-        playList12= findViewById(R.id.playList12);
         songName = findViewById(R.id.songName);
         playButton = findViewById(R.id.playButton);
 
@@ -221,8 +214,8 @@ public class SecondActivity extends Activity {
         rainImage = findViewById(R.id.rainImage);
         riverImage = findViewById(R.id.riverImage);
         leafImage = findViewById(R.id.leafImage);
-        songTheme2 = findViewById(R.id.songTheme);
-        songTheme2.setBackgroundResource(imageId);
+       // songTheme2 = findViewById(R.id.songTheme);
+       // songTheme2.setBackgroundResource(imageId);
        // songTheme2.setBackgroundResource(R.drawable.rectangle);
 
 
@@ -863,10 +856,10 @@ public class SecondActivity extends Activity {
                     volumeSeekBar3.setProgress(65);
                     volumeSeekBar4.setProgress(34);
                     volumeSeekBar5.setProgress(20);
-                    imageId=R.drawable.rectangle;
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
+                    imageId=R.drawable.rectanglesunny;
+                   // songTheme2.setBackgroundResource(R.drawable.rectanglesunny);
                     try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
+                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectanglesunny);
 
                         if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
                         playButton.setBackgroundResource(R.drawable.pausebutton);
@@ -900,11 +893,11 @@ public class SecondActivity extends Activity {
                     volumeSeekBar4.setProgress(90);
                     volumeSeekBar5.setProgress(2);
 
-                    imageId=R.drawable.rectangle2;
+                    imageId=R.drawable.rectanglesnow;
 
-                    songTheme2.setBackgroundResource(R.drawable.rectangle2);
+                   // songTheme2.setBackgroundResource(R.drawable.rectanglesnow);
                     try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle2);
+                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectanglesnow);
 
                         if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
                         playButton.setBackgroundResource(R.drawable.pausebutton);
@@ -938,11 +931,11 @@ public class SecondActivity extends Activity {
                     volumeSeekBar4.setProgress(30);
                     volumeSeekBar5.setProgress(20);
 
-                    imageId=R.drawable.rectangle3;
+                    imageId=R.drawable.rectanglerain;
 
-                    songTheme2.setBackgroundResource(R.drawable.rectangle3);
+                   // songTheme2.setBackgroundResource(R.drawable.rectanglerain);
                     try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle3);
+                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectanglerain);
 
                         if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
                         playButton.setBackgroundResource(R.drawable.pausebutton);
@@ -975,11 +968,11 @@ public class SecondActivity extends Activity {
                     volumeSeekBar4.setProgress(50);
                     volumeSeekBar5.setProgress(20);
 
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
+                  //  songTheme2.setBackgroundResource(R.drawable.rectanglebird);
 
-                    imageId=R.drawable.rectangle;
+                    imageId=R.drawable.rectanglebird;
                     try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
+                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectanglebird);
 
                         if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
                         playButton.setBackgroundResource(R.drawable.pausebutton);
@@ -1011,11 +1004,11 @@ public class SecondActivity extends Activity {
                     volumeSeekBar3.setProgress(40);
                     volumeSeekBar4.setProgress(40);
                     volumeSeekBar5.setProgress(50);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
+                   // songTheme2.setBackgroundResource(R.drawable.rectangleriver);
 
-                    imageId=R.drawable.rectangle;
+                    imageId=R.drawable.rectangleriver;
                     try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
+                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangleriver);
 
                         if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
                         playButton.setBackgroundResource(R.drawable.pausebutton);
@@ -1034,260 +1027,7 @@ public class SecondActivity extends Activity {
             e.printStackTrace();
         }
 
-        try {
-            playList6.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=10;
-                    allprogress2=20;
-                    allprogress3=40;
-                    allprogress4=10;
-                    allprogress5=50;
-                    volumeSeekBar1.setProgress(10);
-                    volumeSeekBar2.setProgress(20);
-                    volumeSeekBar3.setProgress(40);
-                    volumeSeekBar4.setProgress(10);
-                    volumeSeekBar5.setProgress(50);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle2);
 
-                    imageId=R.drawable.rectangle2;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle2);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
-            playList7.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=20;
-                    allprogress2=40;
-                    allprogress3=40;
-                    allprogress4=30;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(20);
-                    volumeSeekBar2.setProgress(40);
-                    volumeSeekBar3.setProgress(40);
-                    volumeSeekBar4.setProgress(30);
-                    volumeSeekBar5.setProgress(20);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle3);
-
-                    imageId=R.drawable.rectangle3;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle3);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            playList8.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=70;
-                    allprogress2=40;
-                    allprogress3=70;
-                    allprogress4=30;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(70);
-                    volumeSeekBar2.setProgress(40);
-                    volumeSeekBar3.setProgress(70);
-                    volumeSeekBar4.setProgress(30);
-                    volumeSeekBar5.setProgress(20);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
-
-                    imageId=R.drawable.rectangle;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            playList9.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=100;
-                    allprogress2=10;
-                    allprogress3=10;
-                    allprogress4=20;
-                    allprogress5=30;
-                    volumeSeekBar1.setProgress(100);
-                    volumeSeekBar2.setProgress(10);
-                    volumeSeekBar3.setProgress(10);
-                    volumeSeekBar4.setProgress(20);
-                    volumeSeekBar5.setProgress(30);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
-
-                    imageId=R.drawable.rectangle;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
-            playList10.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=40;
-                    allprogress2=50;
-                    allprogress3=100;
-                    allprogress4=10;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(40);
-                    volumeSeekBar2.setProgress(50);
-                    volumeSeekBar3.setProgress(100);
-                    volumeSeekBar4.setProgress(10);
-                    volumeSeekBar5.setProgress(20);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle2);
-
-                    imageId=R.drawable.rectangle2;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle2);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
-            playList11.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=50;
-                    allprogress2=80;
-                    allprogress3=70;
-                    allprogress4=40;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(50);
-                    volumeSeekBar2.setProgress(80);
-                    volumeSeekBar3.setProgress(70);
-                    volumeSeekBar4.setProgress(40);
-                    volumeSeekBar5.setProgress(20);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle3);
-
-                    imageId=R.drawable.rectangle3;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle3);
-
-                        if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            playList12.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allprogress1=80;
-                    allprogress2=40;
-                    allprogress3=80;
-                    allprogress4=50;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(80);
-                    volumeSeekBar2.setProgress(40);
-                    volumeSeekBar3.setProgress(80);
-                    volumeSeekBar4.setProgress(50);
-                    volumeSeekBar5.setProgress(20);
-                    songTheme2.setBackgroundResource(R.drawable.rectangle);
-
-                    imageId=R.drawable.rectangle;
-                    try {
-                        MainActivity.songTheme1.setBackgroundResource(R.drawable.rectangle);
-
-                    if(mediaPlayerRain.isPlaying() || mediaPlayerRain2.isPlaying() || mediaPlayerRain3.isPlaying() || mediaPlayerRain4.isPlaying() || mediaPlayerRain5.isPlaying()){
-                        playButton.setBackgroundResource(R.drawable.pausebutton);
-                    }else {
-                        playButton.setBackgroundResource(R.drawable.playbutton);
-
-                    }
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
 
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
