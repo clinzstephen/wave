@@ -14,7 +14,7 @@
         android:textColor="#FFF" />
 
     <Button
-        android:id="@+id/playbutton"
+        android:id="@+id/notificationplaybutton"
         android:layout_width="32dp"
         android:layout_height="35dp"
         android:layout_marginLeft="30dp"
@@ -27,6 +27,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/rectangle2"
         />
 </LinearLayout>

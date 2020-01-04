@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <receiver android:name=".MainActivity"/>
+        <receiver android:name=".NotificationReceiver"/>
 
 
         <service

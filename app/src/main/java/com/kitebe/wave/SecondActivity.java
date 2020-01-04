@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,7 +67,7 @@ public class SecondActivity extends Activity {
     //SharedPreferences sharedpreferencesexit;
     int getSharedPreferenceValue,getSharedPreferenceValue2,getSharedPreferenceValue3,getSharedPreferenceValue4,getSharedPreferenceValue5;
     ImageView birdImage,thunderImage,rainImage,riverImage,leafImage;
-    ImageButton backbutton;
+    LinearLayout backbutton;
 
     //    AudioManager audioManager1,audioManager2,audioManager3;
     int min1 = 0, max1 = 10, current1 = 5,

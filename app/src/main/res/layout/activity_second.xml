@@ -6,198 +6,274 @@
     android:layout_height="match_parent"
     android:background="@drawable/equilizerbg">
 
-
-    <ImageButton
+    <LinearLayout
         android:id="@+id/backbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="401dp"
-        android:layout_marginRight="401dp"
-        android:background="@drawable/backbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backbuttonIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/backbutton" />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="60dp"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        >
 
-        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
-            android:layout_width="45dp"
-            android:layout_height="228dp"
+        <LinearLayout
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    >
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/volumeSeekBar1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:progressDrawable="@drawable/seek_bar"
+                        android:progressTint="@color/colorPrimaryDark"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbTint="#FFF"
+                        app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="0dp">
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/volumeSeekBar2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:progressDrawable="@drawable/seek_bar"
+                        android:progressTint="@color/colorPrimaryDark"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbTint="#FFF"
+                        app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="0dp">
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/volumeSeekBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:progressDrawable="@drawable/seek_bar"
+                        android:progressTint="@color/colorPrimaryDark"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbTint="#FFF"
+                        app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="0dp">
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/volumeSeekBar4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:progressDrawable="@drawable/seek_bar"
+                        android:progressTint="@color/colorPrimaryDark"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbTint="#FFF"
+                        app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+                <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="0dp">
+
+                    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                        android:id="@+id/volumeSeekBar5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:progressDrawable="@drawable/seek_bar"
+                        android:progressTint="@color/colorPrimaryDark"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbTint="#FFF"
+                        app:seekBarRotation="CW270" />
+                    <!-- Rotation: CW90 or CW270 -->
+                </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="337dp"
+                android:layout_height="44dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/birdImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/group463" />
+
+                <ImageView
+                    android:id="@+id/thunderImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+
+                    android:src="@drawable/path74" />
+
+                <ImageView
+                    android:id="@+id/rainImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+
+                    android:src="@drawable/group613" />
+
+                <ImageView
+                    android:id="@+id/riverImage"
+                    android:layout_width="34dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/group612" />
+
+                <ImageView
+                    android:id="@+id/leafImage"
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/path79" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp"
+            android:weightSum="2">
+        <TextView
+            android:id="@+id/popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Climate"
+            android:textColor="#FFFF"
+            android:textSize="12dp"
+            android:textStyle="bold"
             android:layout_weight="1"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="0dp">
+            android:layout_marginBottom="2dp"
+             />
 
-            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
-                android:id="@+id/volumeSeekBar1"
-                android:layout_width="42dp"
-                android:layout_height="228dp"
-                android:progressBackgroundTint="@color/colorPrimaryDark"
-                android:progressDrawable="@drawable/seek_bar"
-                android:progressTint="@color/colorPrimaryDark"
-                android:splitTrack="false"
-                android:thumb="@drawable/seek_thumb"
-                android:thumbTint="#FFF"
-                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
-        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
-
-        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
-            android:layout_width="45dp"
-            android:layout_height="228dp"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_weight="1"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
-                android:id="@+id/volumeSeekBar2"
-                android:layout_width="42dp"
-                android:layout_height="228dp"
-                android:progressBackgroundTint="@color/colorPrimaryDark"
-                android:progressDrawable="@drawable/seek_bar"
-                android:progressTint="@color/colorPrimaryDark"
-                android:splitTrack="false"
-                android:thumb="@drawable/seek_thumb"
-                android:thumbTint="#FFF"
-                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
-        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
-
-        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
-            android:layout_width="45dp"
-            android:layout_height="228dp"
-            android:layout_weight="1"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
-                android:id="@+id/volumeSeekBar3"
-                android:layout_width="42dp"
-                android:layout_height="228dp"
-                android:progressBackgroundTint="@color/colorPrimaryDark"
-                android:progressDrawable="@drawable/seek_bar"
-                android:progressTint="@color/colorPrimaryDark"
-                android:splitTrack="false"
-                android:thumb="@drawable/seek_thumb"
-                android:thumbTint="#FFF"
-                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
-        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
-
-        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
-            android:layout_width="45dp"
-            android:layout_height="228dp"
-            android:layout_weight="1"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
-                android:id="@+id/volumeSeekBar4"
-                android:layout_width="42dp"
-                android:layout_height="228dp"
-                android:progressBackgroundTint="@color/colorPrimaryDark"
-                android:progressDrawable="@drawable/seek_bar"
-                android:progressTint="@color/colorPrimaryDark"
-                android:splitTrack="false"
-                android:thumb="@drawable/seek_thumb"
-                android:thumbTint="#FFF"
-                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
-        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
-
-        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
-            android:layout_width="45dp"
-            android:layout_height="228dp"
-            android:layout_weight="1"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
-                android:id="@+id/volumeSeekBar5"
-                android:layout_width="42dp"
-                android:layout_height="228dp"
-                android:progressBackgroundTint="@color/colorPrimaryDark"
-                android:progressDrawable="@drawable/seek_bar"
-                android:progressTint="@color/colorPrimaryDark"
-                android:splitTrack="false"
-                android:thumb="@drawable/seek_thumb"
-                android:thumbTint="#FFF"
-                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
-        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+            android:weightSum="5"
+            android:layout_marginTop="20dp"
+            >
 
 
+            <Button
+                android:id="@+id/playList1"
+                android:layout_width="72dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglesunny" />
+
+            <Button
+                android:id="@+id/playList2"
+                android:layout_width="72dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglesnow" />
+
+            <Button
+                android:id="@+id/playList3"
+                android:layout_width="72dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglerain" />
+
+            <Button
+                android:id="@+id/playList4"
+                android:layout_width="72dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglebird" />
+
+            <Button
+                android:id="@+id/playList5"
+                android:layout_width="72dp"
+                android:layout_height="125dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangleriver" />
+        </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="325dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/birdImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:src="@drawable/group463" />
-
-        <ImageView
-            android:id="@+id/thunderImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-
-            android:src="@drawable/path74" />
-
-        <ImageView
-            android:id="@+id/rainImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-
-            android:src="@drawable/group613" />
-
-        <ImageView
-            android:id="@+id/riverImage"
-            android:layout_width="34dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:src="@drawable/group612" />
-
-        <ImageView
-            android:id="@+id/leafImage"
-            android:layout_width="16dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/path79" />
-
-
-    </LinearLayout>
 
     <View
         android:id="@+id/SplitLine_hor1"
@@ -211,103 +287,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.905" />
 
-    <TextView
-        android:id="@+id/popular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Climate"
-        android:textColor="#FFFF"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
     <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="36dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popular">
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent">
 
-
-        <Button
-            android:id="@+id/playList1"
-            android:layout_width="70dp"
-            android:layout_height="125dp"
-            android:background="@drawable/rectanglesunny" />
-
-        <Button
-            android:id="@+id/playList2"
-            android:layout_width="70dp"
-            android:layout_height="125dp"
-            android:background="@drawable/rectanglesnow" />
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinslight"
+            android:hint="music name"
+            android:text="music name"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:text="music name"
+            android:layout_marginRight="20dp"/>
 
         <Button
-            android:id="@+id/playList3"
-            android:layout_width="70dp"
-            android:layout_height="125dp"
-            android:background="@drawable/rectanglerain" />
-
-        <Button
-            android:id="@+id/playList4"
-            android:layout_width="70dp"
-            android:layout_height="125dp"
-            android:background="@drawable/rectanglebird" />
-
-        <Button
-            android:id="@+id/playList5"
-            android:layout_width="70dp"
-            android:layout_height="125dp"
-            android:background="@drawable/rectangleriver" />
-
+            android:id="@+id/playButton"
+            android:layout_width="23dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/songName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="129dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppinslight"
-        android:hint="music name"
-        android:text="music name"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="music name" />
-
-    <Button
-        android:id="@+id/playButton"
-        android:layout_width="23dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toEndOf="@+id/songName"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <!--    <LinearLayout-->
 <!--        android:id="@+id/linearLayout3"-->

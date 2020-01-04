@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.Manifest;
 import android.app.Notification;
@@ -17,6 +18,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
@@ -33,7 +36,9 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -62,7 +67,8 @@ import static com.kitebe.wave.App.CHANNEL_ID;
 public class MainActivity extends AppCompatActivity {
 //    EditText cityName;
     AutoCompleteTextView autoSuggestion;
-    TextView weatherTextView,temp,humidty,wind,clouds;
+    static TextView weatherTextView;
+    TextView temp,humidty,wind,clouds;
    // TextView songName;
     TextView coordTextView;
     AudioManager audioManager;
@@ -82,10 +88,13 @@ public class MainActivity extends AppCompatActivity {
    static boolean isPlayingBoolean = false;
    static int  allprogress1,allprogress2,allprogress3,allprogress4,allprogress5;
 
+   //notification
+   RemoteViews collapsedView,expandedView;
+   Button notificationplaybutton;
+
     boolean loop;
     //current location
     LocationManager locationManager;
-
     LocationListener locationListener;
     String addresss;
     ImageButton songList;
@@ -396,12 +405,16 @@ public class MainActivity extends AppCompatActivity {
                         mediaPlayerRain5.setVolume(1 - log5, 1 - log5);
 
 
-                        //Notification
+                        //Notification notication notification
 
-                        RemoteViews collapsedView = new RemoteViews(getPackageName(),
+                         collapsedView = new RemoteViews(getPackageName(),
                                 R.layout.notification_collapsed);
-                        RemoteViews expandedView = new RemoteViews(getPackageName(),
+                         expandedView = new RemoteViews(getPackageName(),
                                 R.layout.notification_expanded);
+
+
+                        //notificationplaybutton.setBackgroundResource(R.drawable.pausebutton);
+
 
                         Intent clickIntent = new Intent(MainActivity.this, NotificationReceiver.class);
                         PendingIntent clickPendingIntent = PendingIntent.getBroadcast(MainActivity.this,
@@ -410,7 +423,24 @@ public class MainActivity extends AppCompatActivity {
 
                         collapsedView.setTextViewText(R.id.text_view_collapsed_1, "Hello World!");
 
-                        expandedView.setImageViewResource(R.id.image_view_expanded, R.drawable.rectangle);
+//                        expandedView.setImageViewResource(R.id.image_view_expanded, R.drawable.rectangle);
+                //       int imageId=R.drawable.playbutton;
+
+
+                        if (mediaPlayerRain3.isPlaying()){
+
+                            expandedView.setTextViewText(R.id.text_view_expanded,"music is playing");
+                       //    expandedView.setImageViewResource(R.id.notificationplaybutton, imageId);
+
+
+                        }else {
+                            expandedView.setTextViewText(R.id.text_view_expanded,"music is not playing");
+
+                        }
+
+
+
+
                         expandedView.setOnClickPendingIntent(R.id.image_view_expanded, clickPendingIntent);
 
                         Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
@@ -421,6 +451,10 @@ public class MainActivity extends AppCompatActivity {
                                 .build();
 
                         notificationManager.notify(1, notification);
+
+
+
+
 
 
                     }
@@ -576,17 +610,6 @@ public class MainActivity extends AppCompatActivity {
 
     private NotificationManagerCompat notificationManager;
 
-    public class NotificationReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context, "Image clicked", Toast.LENGTH_SHORT).show();
-
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-            notificationManager.cancel(1);
-        }
-    }
-
 
 
 
@@ -602,6 +625,9 @@ public class MainActivity extends AppCompatActivity {
 //        } else {
 //            setContentView(R.layout.main_activity);
 //        }
+
+        //notification
+
 
         songList = findViewById(R.id.songList);
        // songName = findViewById(R.id.songName);
@@ -663,16 +689,76 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
 //
-// Get the string array
+// autofill autofill
         List<String> responseList = new ArrayList<String>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, responseList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, responseList){
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view =super.getView(position, convertView, parent);
+
+                final TextView textView=(TextView) view.findViewById(android.R.id.text1);
+
+                /*YOUR CHOICE OF COLOR*/
+                textView.setTextColor(Color.BLACK);
+                textView.setBackgroundColor(Color.WHITE);
+                Typeface typeface = ResourcesCompat.getFont(getApplicationContext(), R.font.robotoslabregular);
+                textView.setTypeface(typeface);
+
+
+
+
+                return view;
+            }
+        };
 
         autoSuggestion = findViewById(R.id.autocomplete_country);
 
         autoSuggestion.setAdapter(adapter);
+        autoSuggestion.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item text from ListView
+                String selectedItem = (String) parent.getItemAtPosition(position);
+
+                // Display the selected item text on TextView
+                //tv.setText("Your favorite : " + selectedItem);
+                Log.i("itemselected",selectedItem);
+
+
+                try {
+
+                    DownloadTask task = new DownloadTask();
+                    Log.i("autosuggestion","inside");
+                    mediaPlayerRain.reset();
+                    mediaPlayerRain2.reset();
+                    mediaPlayerRain3.reset();
+                    mediaPlayerRain4.reset();
+                    mediaPlayerRain5.reset();
+
+
+//                    String encodedCityName = URLEncoder.encode(cityName.getText().toString(), "UTF-8");
+                    //http://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
+
+                    task.execute("https://openweathermap.org/data/2.5/weather?q=" + selectedItem + "&appid=b6907d289e10d714a6e88b30761fae22");
+
+                    InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    mgr.hideSoftInputFromWindow(autoSuggestion.getWindowToken(), 0);
+                } catch(Exception e){
+
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        public void run() {
+                            Toast t = Toast.makeText(MainActivity.this,"searching for gps :",Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                    });
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
         try {
@@ -953,8 +1039,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onStop() {
         super.onStop();
+   //     mediaStop();
 
-//       mediaStop();
         locationManager.removeUpdates(locationListener);
 
     }
@@ -976,6 +1062,13 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayerRain2.stop();
         mediaPlayerRain3.stop();
         mediaPlayerRain4.stop();
+        mediaPlayerRain5.stop();
+    }
+    public void mediaPause(){
+        mediaPlayerRain.pause();
+        mediaPlayerRain2.pause();
+        mediaPlayerRain3.pause();
+        mediaPlayerRain4.pause();
         mediaPlayerRain5.stop();
     }
 
