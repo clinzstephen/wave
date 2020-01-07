@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 //{"coord":{"lon":76.25,"lat":9.96},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":31,"pressure":1011,"humidity":66,"temp_min":31,"temp_max":31},"visibility":4000,"wind":{"speed":1.5,"deg":210},"clouds":{"all":96},"dt":1573623100,"sys":{"type":1,"id":9211,"country":"IN","sunrise":1573606121,"sunset":1573648193},"timezone":19800,"id":1273874,"name":"Kochi","cod":200}
 
                 String weatherInfo = jsonWeatherObject.getString("weather");
-                Log.i("weather content", weatherInfo);
+              //  Log.i("weather content", weatherInfo);
 
                 JSONArray weatherInfoArray = new JSONArray(weatherInfo);
                 String weatherInformation = "";
@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject progressJson = new JSONObject(stringPL);
 
                 String weatherBackgroundInfo = weatherBackgroundContent.getString("weather");
-                Log.i("weather content", weatherBackgroundInfo);
+               // Log.i("weather content", weatherBackgroundInfo);
 
                 //progress equalizer json
                 String playlistName=progressJson.getString("playlistjsonfile");
@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // get drawable by resourceImageid
                         Drawable drawable = resources.getDrawable(resourceImageId);
-                        Toast.makeText(getApplicationContext(),song1,Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(getApplicationContext(),song1,Toast.LENGTH_SHORT).show();
 
                         // backgroungImage.setImageResource(R.drawable.rain);
                         backgroungImage.setBackgroundResource(resourceImageId);
@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!weatherName.equals("") ){
 
                         weatherBackgroundInformation += weatherName+"\r\n";
-                        Log.i("weather information",weatherBackgroundInformation);
+                       // Log.i("weather information",weatherBackgroundInformation);
                     }
 
                 }
@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
                           allprogress3 =playlistNameArrayPart.getInt("progress3");
                           allprogress4 =playlistNameArrayPart.getInt("progress4");
                           allprogress5 =playlistNameArrayPart.getInt("progress5");
-                        Log.i("progressjson","info");
+                     //   Log.i("progressjson","info");
 
                         float log1 = (float) (Math.log(100 - (allprogress1-1)) / Math.log(100));
                         float log2 = (float) (Math.log(100 - (allprogress2-1)) / Math.log(100));
@@ -380,7 +380,7 @@ public class MainActivity extends AppCompatActivity {
                         final int resourceSongId4 = resources.getIdentifier(song4, "raw", context.getPackageName());
                         final int resourceSongId5 = resources.getIdentifier(song5, "raw", context.getPackageName());
 
-                        Toast.makeText(getApplicationContext(),allprogress1+"hello",Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getApplicationContext(),allprogress1+"hello",Toast.LENGTH_SHORT).show();
 
 
                         mediaPlayerRain = MediaPlayer.create(getApplicationContext(),resourceSongId1);
@@ -407,50 +407,50 @@ public class MainActivity extends AppCompatActivity {
 
                         //Notification notication notification
 
-                         collapsedView = new RemoteViews(getPackageName(),
-                                R.layout.notification_collapsed);
-                         expandedView = new RemoteViews(getPackageName(),
-                                R.layout.notification_expanded);
-
-
-                        //notificationplaybutton.setBackgroundResource(R.drawable.pausebutton);
-
-
-                        Intent clickIntent = new Intent(MainActivity.this, NotificationReceiver.class);
-                        PendingIntent clickPendingIntent = PendingIntent.getBroadcast(MainActivity.this,
-                                0, clickIntent, 0);
-
-
-                        collapsedView.setTextViewText(R.id.text_view_collapsed_1, "Hello World!");
-
-//                        expandedView.setImageViewResource(R.id.image_view_expanded, R.drawable.rectangle);
-                //       int imageId=R.drawable.playbutton;
-
-
-                        if (mediaPlayerRain3.isPlaying()){
-
-                            expandedView.setTextViewText(R.id.text_view_expanded,"music is playing");
-                       //    expandedView.setImageViewResource(R.id.notificationplaybutton, imageId);
-
-
-                        }else {
-                            expandedView.setTextViewText(R.id.text_view_expanded,"music is not playing");
-
-                        }
-
-
-
-
-                        expandedView.setOnClickPendingIntent(R.id.image_view_expanded, clickPendingIntent);
-
-                        Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
-                                .setSmallIcon(R.drawable.logo)
-                                .setCustomContentView(collapsedView)
-                                .setCustomBigContentView(expandedView)
-                                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
-                                .build();
-
-                        notificationManager.notify(1, notification);
+//                         collapsedView = new RemoteViews(getPackageName(),
+//                                R.layout.notification_collapsed);
+//                         expandedView = new RemoteViews(getPackageName(),
+//                                R.layout.notification_expanded);
+//
+//
+//                        //notificationplaybutton.setBackgroundResource(R.drawable.pausebutton);
+//
+//
+//                        Intent clickIntent = new Intent(MainActivity.this, NotificationReceiver.class);
+//                        PendingIntent clickPendingIntent = PendingIntent.getBroadcast(MainActivity.this,
+//                                0, clickIntent, 0);
+//
+//
+//                        collapsedView.setTextViewText(R.id.text_view_collapsed_1, "Hello World!");
+//
+////                        expandedView.setImageViewResource(R.id.image_view_expanded, R.drawable.rectangle);
+//                //       int imageId=R.drawable.playbutton;
+//
+//
+//                        if (mediaPlayerRain3.isPlaying()){
+//
+//                            expandedView.setTextViewText(R.id.text_view_expanded,"music is playing");
+//                       //    expandedView.setImageViewResource(R.id.notificationplaybutton, imageId);
+//
+//
+//                        }else {
+//                            expandedView.setTextViewText(R.id.text_view_expanded,"music is not playing");
+//
+//                        }
+//
+//
+//
+//
+//                        expandedView.setOnClickPendingIntent(R.id.image_view_expanded, clickPendingIntent);
+//
+//                        Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+//                                .setSmallIcon(R.drawable.logo)
+//                                .setCustomContentView(collapsedView)
+//                                .setCustomBigContentView(expandedView)
+//                                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+//                                .build();
+//
+//                        notificationManager.notify(1, notification);
 
 
 
@@ -462,7 +462,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }catch (Exception e){
-                Log.i("withObject","hi");
+               // Log.i("withObject","hi");
                 e.printStackTrace();
             }
 
@@ -496,11 +496,11 @@ public class MainActivity extends AppCompatActivity {
                     humidty.setText(coordHumidityInformation+"%");
 
                 }else {
-                    Toast.makeText(getApplicationContext(),"could not find coord Information :",Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(getApplicationContext(),"Searching for gps :",Toast.LENGTH_LONG).show();
                 }
 
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
                 e.printStackTrace();
 
             }
@@ -530,11 +530,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }else {
-                    Toast.makeText(getApplicationContext(),"could not find coord Information :",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),"could not find coord Information :",Toast.LENGTH_LONG).show();
                 }
 
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
                 e.printStackTrace();
 
             }
@@ -559,11 +559,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }else {
-                    Toast.makeText(getApplicationContext(),"could not find coord Information :",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),"could not find coord Information :",Toast.LENGTH_LONG).show();
                 }
 
             } catch (Exception e) {
-                Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"could not load the coord information :",Toast.LENGTH_LONG).show();
                 e.printStackTrace();
 
             }
@@ -574,11 +574,11 @@ public class MainActivity extends AppCompatActivity {
 
     //reading json from assets
     public String loadJSONFromAsset(String s) {
-        Log.i("infunction","heloo");
+       // Log.i("infunction","heloo");
         String json = null;
 
         try {
-            Log.i("try","hi");
+          //  Log.i("try","hi");
             InputStream is = getAssets().open(s);
 
             int size = is.available();
@@ -590,17 +590,17 @@ public class MainActivity extends AppCompatActivity {
             is.close();
 
             json = new String(buffer, "UTF-8");
-            Log.d("intry","heloo");
+           // Log.d("intry","heloo");
 //            Toast.makeText(this, "Json"+json, Toast.LENGTH_SHORT).show();
 
 
         } catch (IOException ex) {
             ex.printStackTrace();
-            Log.i("incatch","heloo");
+          //  Log.i("incatch","heloo");
             return null;
         }
-        Log.i("jsonfile",json);
-        Log.i("beforeReturn","heloo");
+     //   Log.i("jsonfile",json);
+      //  Log.i("beforeReturn","heloo");
 
         return json;
 
@@ -731,7 +731,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
 
                     DownloadTask task = new DownloadTask();
-                    Log.i("autosuggestion","inside");
+                 //   Log.i("autosuggestion","inside");
                     mediaPlayerRain.reset();
                     mediaPlayerRain2.reset();
                     mediaPlayerRain3.reset();
@@ -769,7 +769,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject locationJson = new JSONObject(stringLocation);
 
             String locationName = locationJson.getString("countries_array_json");
-            Log.i("countries_array", locationName);
+           // Log.i("countries_array", locationName);
 
             JSONArray locationNameArray = new JSONArray(locationName);
 
@@ -929,59 +929,59 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        try {
-            SecondActivity.playList1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    try {
-                        //SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle);
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
-            SecondActivity.playList2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    SecondActivity.volumeSeekBar1.setProgress(2);
-//                    SecondActivity.volumeSeekBar2.setProgress(8);
-//                    SecondActivity.volumeSeekBar3.setProgress(2);
-//                    SecondActivity.volumeSeekBar4.setProgress(90);
-//                    SecondActivity.volumeSeekBar5.setProgress(2);
-                    try {
-                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle2);
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            SecondActivity.playList3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    try {
-                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle3);
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//            SecondActivity.playList1.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    try {
+//                        //SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle);
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            SecondActivity.playList2.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+////                    SecondActivity.volumeSeekBar1.setProgress(2);
+////                    SecondActivity.volumeSeekBar2.setProgress(8);
+////                    SecondActivity.volumeSeekBar3.setProgress(2);
+////                    SecondActivity.volumeSeekBar4.setProgress(90);
+////                    SecondActivity.volumeSeekBar5.setProgress(2);
+//                    try {
+//                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle2);
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        try {
+//            SecondActivity.playList3.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    try {
+//                       // SecondActivity.songTheme2.setBackgroundResource(R.drawable.rectangle3);
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
 

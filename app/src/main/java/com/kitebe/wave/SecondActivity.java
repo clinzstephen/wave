@@ -82,11 +82,11 @@ public class SecondActivity extends Activity {
 
     //reading json from assets
     public String loadJSONFromAsset(String s) {
-        Log.i("infunction","heloo");
+       // Log.i("infunction","heloo");
         String json = null;
 
         try {
-            Log.i("try","hi");
+         //   Log.i("try","hi");
             InputStream is = getAssets().open(s);
 
             int size = is.available();
@@ -104,11 +104,11 @@ public class SecondActivity extends Activity {
 
         } catch (IOException ex) {
             ex.printStackTrace();
-            Log.i("incatch","heloo");
+          //  Log.i("incatch","heloo");
             return null;
         }
-        Log.i("jsonfile",json);
-        Log.i("beforeReturn","heloo");
+      //  Log.i("jsonfile",json);
+      //  Log.i("beforeReturn","heloo");
 
         return json;
 
@@ -847,16 +847,16 @@ public class SecondActivity extends Activity {
             playList1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    allprogress1=30;
-                    allprogress2=47;
-                    allprogress3=65;
-                    allprogress4=34;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(30);
-                    volumeSeekBar2.setProgress(47);
-                    volumeSeekBar3.setProgress(65);
-                    volumeSeekBar4.setProgress(34);
-                    volumeSeekBar5.setProgress(20);
+                    allprogress1=71;
+                    allprogress2=6;
+                    allprogress3=6;
+                    allprogress4=0;
+                    allprogress5=34;
+                    volumeSeekBar1.setProgress(71);
+                    volumeSeekBar2.setProgress(6);
+                    volumeSeekBar3.setProgress(6);
+                    volumeSeekBar4.setProgress(0);
+                    volumeSeekBar5.setProgress(34);
                     imageId=R.drawable.rectanglesunny;
                    // songTheme2.setBackgroundResource(R.drawable.rectanglesunny);
                     try {
@@ -882,17 +882,17 @@ public class SecondActivity extends Activity {
             playList2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    allprogress1=2;
-                    allprogress2=8;
-                    allprogress3=2;
-                    allprogress4=90;
-                    allprogress5=2;
+                    allprogress1=19;
+                    allprogress2=0;
+                    allprogress3=7;
+                    allprogress4=0;
+                    allprogress5=85;
 
-                    volumeSeekBar1.setProgress(2);
-                    volumeSeekBar2.setProgress(8);
-                    volumeSeekBar3.setProgress(2);
-                    volumeSeekBar4.setProgress(90);
-                    volumeSeekBar5.setProgress(2);
+                    volumeSeekBar1.setProgress(19);
+                    volumeSeekBar2.setProgress(0);
+                    volumeSeekBar3.setProgress(7);
+                    volumeSeekBar4.setProgress(0);
+                    volumeSeekBar5.setProgress(85);
 
                     imageId=R.drawable.rectanglesnow;
 
@@ -921,16 +921,16 @@ public class SecondActivity extends Activity {
             playList3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    allprogress1=60;
-                    allprogress2=17;
-                    allprogress3=1;
-                    allprogress4=30;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(60);
-                    volumeSeekBar2.setProgress(17);
-                    volumeSeekBar3.setProgress(1);
-                    volumeSeekBar4.setProgress(30);
-                    volumeSeekBar5.setProgress(20);
+                    allprogress1=34;
+                    allprogress2=69;
+                    allprogress3=49;
+                    allprogress4=13;
+                    allprogress5=34;
+                    volumeSeekBar1.setProgress(34);
+                    volumeSeekBar2.setProgress(69);
+                    volumeSeekBar3.setProgress(49);
+                    volumeSeekBar4.setProgress(13);
+                    volumeSeekBar5.setProgress(34);
 
                     imageId=R.drawable.rectanglerain;
 
@@ -959,15 +959,15 @@ public class SecondActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     allprogress1=70;
-                    allprogress2=20;
-                    allprogress3=70;
-                    allprogress4=50;
-                    allprogress5=20;
-                    volumeSeekBar1.setProgress(70);
-                    volumeSeekBar2.setProgress(20);
-                    volumeSeekBar3.setProgress(70);
-                    volumeSeekBar4.setProgress(50);
-                    volumeSeekBar5.setProgress(20);
+                    allprogress2=9;
+                    allprogress3=1;
+                    allprogress4=1;
+                    allprogress5=29;
+                    volumeSeekBar1.setProgress(83);
+                    volumeSeekBar2.setProgress(9);
+                    volumeSeekBar3.setProgress(1);
+                    volumeSeekBar4.setProgress(1);
+                    volumeSeekBar5.setProgress(29);
 
                   //  songTheme2.setBackgroundResource(R.drawable.rectanglebird);
 
@@ -995,16 +995,16 @@ public class SecondActivity extends Activity {
             playList5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    allprogress1=20;
-                    allprogress2=70;
-                    allprogress3=40;
-                    allprogress4=40;
-                    allprogress5=50;
-                    volumeSeekBar1.setProgress(20);
-                    volumeSeekBar2.setProgress(70);
-                    volumeSeekBar3.setProgress(40);
-                    volumeSeekBar4.setProgress(40);
-                    volumeSeekBar5.setProgress(50);
+                    allprogress1=40;
+                    allprogress2=1;
+                    allprogress3=18;
+                    allprogress4=64;
+                    allprogress5=28;
+                    volumeSeekBar1.setProgress(40);
+                    volumeSeekBar2.setProgress(1);
+                    volumeSeekBar3.setProgress(18);
+                    volumeSeekBar4.setProgress(64);
+                    volumeSeekBar5.setProgress(28);
                    // songTheme2.setBackgroundResource(R.drawable.rectangleriver);
 
                     imageId=R.drawable.rectangleriver;

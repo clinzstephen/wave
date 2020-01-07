@@ -66,11 +66,36 @@
       "song3":"song3",
       "song4":"song4",
       "song5":"song5",
-      "playlistname": "Clear",
+      "playlistname": "Snow",
       "image":"snow",
       "songtheme":"rectanglesnow"
 
     },
+    {
+      "name":"Mist",
+      "song1":"song1",
+      "song2":"song2",
+      "song3":"song3",
+      "song4":"song4",
+      "song5":"song5",
+      "playlistname": "Snow",
+      "image":"snow",
+      "songtheme":"rectanglesnow"
+
+    },
+    {
+      "name":"Fog",
+      "song1":"song1",
+      "song2":"song2",
+      "song3":"song3",
+      "song4":"song4",
+      "song5":"song5",
+      "playlistname": "Fog",
+      "image":"snow",
+      "songtheme":"rectanglesnow"
+
+    },
+
     {
       "name":"Drizzle",
       "song1":"song1",
