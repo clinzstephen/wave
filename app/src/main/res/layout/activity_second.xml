@@ -49,8 +49,7 @@
                 <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
                     android:layout_width="wrap_content"
                     android:layout_height="300dp"
-                    android:layout_weight="1"
-                    >
+                    android:layout_weight="1">
 
                     <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
                         android:id="@+id/volumeSeekBar1"
@@ -161,9 +160,9 @@
                     android:id="@+id/birdImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="3dp"
                     android:layout_weight="1"
-                    android:src="@drawable/group463" />
+                    android:src="@drawable/ic_bird" />
 
                 <ImageView
                     android:id="@+id/thunderImage"
@@ -171,8 +170,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-
-                    android:src="@drawable/path74" />
+                    android:src="@drawable/ic_thunder"
+                    android:tint="@android:color/white"/>
 
                 <ImageView
                     android:id="@+id/rainImage"
@@ -180,23 +179,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-
-                    android:src="@drawable/group613" />
+                    android:src="@drawable/ic_rainicon"
+                    android:tint="@android:color/white"/>
 
                 <ImageView
                     android:id="@+id/riverImage"
                     android:layout_width="34dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
-                    android:src="@drawable/group612" />
+                    android:src="@drawable/ic_wind" />
 
                 <ImageView
                     android:id="@+id/leafImage"
                     android:layout_width="16dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
-                    android:src="@drawable/path79" />
+                    android:src="@drawable/ic_river"/>
 
 
             </LinearLayout>

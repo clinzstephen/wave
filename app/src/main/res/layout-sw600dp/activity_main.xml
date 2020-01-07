@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/backgroundImage"
+android:background="@drawable/rain"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/songTheme"
+        android:layout_width="89dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rectanglerain"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/songList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_iconnew"
+            tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <Button
+            android:id="@+id/playbutton"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="35dp"
+            />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/cityName"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@android:color/transparent"-->
+        <!--            android:fontFamily="@font/robotoslablight"-->
+        <!--            android:hint="Cochin"-->
+        <!--            android:inputType="textPersonName"-->
+        <!--            android:paddingTop="7dp"-->
+        <!--            android:textColor="@android:color/background_light" />-->
+
+    <!--    <TextView-->
+<!--        android:id="@+id/temp"-->
+<!--        android:layout_width="101dp"-->
+<!--        android:layout_height="126dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:fontFamily=""-->
+<!--        android:text="27"-->
+<!--        android:textSize="78dp"-->
+<!--        app:fontFamily="@font/merriweatherlight"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.087"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.976" />-->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="56dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.7"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintVertical_bias="0.7"
+    >
+
+
+        />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete_country"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/robotoslabregular"
+            android:hint="Cochin"
+            android:includeFontPadding="false"
+            android:textColor="@android:color/white"
+            android:inputType="textPersonName"
+            android:cursorVisible="false"></AutoCompleteTextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:includeFontPadding="false"
+            >
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="27"
+                android:textColor="@android:color/white"
+                android:paddingTop="0dp"
+                android:textSize="88sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/robotoslablight"
+                />
+            <TextView
+                android:id="@+id/degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="&#xb0;C"
+                android:textSize="88sp"
+                app:fontFamily="@font/robotoslablight"
+                android:textColor="@android:color/white"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="2dp"
+                app:srcCompat="@drawable/sign1" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/robotoslablight"
+                android:paddingRight="8dp"
+                android:text="40%"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"/>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="2dp"
+                app:srcCompat="@drawable/sign3"
+                />
+
+            <TextView
+                android:id="@+id/clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/robotoslablight"
+                android:paddingRight="8dp"
+                android:text="20%"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"/>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="2dp"
+                app:srcCompat="@drawable/sign5" />
+
+            <TextView
+                android:id="@+id/wind"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/robotoslablight"
+                android:paddingRight="6dp"
+                android:text="15km/h"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/weatherTextView"
+            android:layout_width="365dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/robotoslablight"
+            android:text="Moderate Rain"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/coordTextView"
+        android:layout_width="148dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginLeft="263dp"
+        android:layout_marginBottom="3dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/songName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppinsbold"-->
+<!--        android:text="summer 1"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:layout_editor_absoluteX="139dp"-->
+<!--        tools:layout_editor_absoluteY="677dp" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

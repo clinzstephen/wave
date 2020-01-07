@@ -177,7 +177,7 @@ public class SecondActivity extends Activity {
             e.printStackTrace();
         }
 */
-        sharedPreferences = getApplicationContext()
+       /* sharedPreferences = getApplicationContext()
                 .getSharedPreferences("com.kitebe.wave", Context.MODE_PRIVATE);
         HashSet<String> set = (HashSet<String>) sharedPreferences.getStringSet("notes", null);
 
@@ -187,7 +187,7 @@ public class SecondActivity extends Activity {
             notes = new ArrayList(set);
         }
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
-
+*/
 
 
         //saveMusic button
@@ -444,6 +444,7 @@ public class SecondActivity extends Activity {
                     // mediaPlayer1.start();
                         mediaPlayerRain.setVolume(1-log1,1-log1);
                         mediaPlayerRain.setLooping(true);
+                        allprogress1=progress1;
 
                     }catch (Exception e){
                         e.printStackTrace();
@@ -523,6 +524,7 @@ public class SecondActivity extends Activity {
                        //mediaPlayer2.start();
                        mediaPlayerRain2.setVolume(1 - log2, 1 - log2);
                        mediaPlayerRain2.setLooping(true);
+                       allprogress2=progress2;
                        Log.i("logvalue2", String.valueOf(log2));
                    }catch (Exception e){
                        e.printStackTrace();
@@ -598,6 +600,7 @@ public class SecondActivity extends Activity {
                         // mediaPlayer3.start();
                         mediaPlayerRain3.setVolume(1-log3,1-log3);
                         mediaPlayerRain3.setLooping(true);
+                        allprogress3=progress3;
                         Log.i("logvalue3", String.valueOf(log3));
                         //saveButton
 /*
@@ -674,6 +677,7 @@ public class SecondActivity extends Activity {
                        // mediaPlayer4.start();
                        mediaPlayerRain4.setVolume(1 - log4, 1 - log4);
                        mediaPlayerRain4.setLooping(true);
+                       allprogress4=progress4;
                        Log.i("logvalue4", String.valueOf(log4));
                    }catch (Exception e){
                        e.printStackTrace();
@@ -751,6 +755,7 @@ public class SecondActivity extends Activity {
                    // mediaPlayer5.start();
                    mediaPlayerRain5.setVolume(1 - log5, 1 - log5);
                    mediaPlayerRain5.setLooping(true);
+                   allprogress5=progress5;
                    Log.i("logvalue5", String.valueOf(log5));
 
                }catch (Exception e){
@@ -850,13 +855,13 @@ public class SecondActivity extends Activity {
                     allprogress1=71;
                     allprogress2=6;
                     allprogress3=6;
-                    allprogress4=0;
-                    allprogress5=34;
+                    allprogress4=34;
+                    allprogress5=1;
                     volumeSeekBar1.setProgress(71);
                     volumeSeekBar2.setProgress(6);
                     volumeSeekBar3.setProgress(6);
-                    volumeSeekBar4.setProgress(0);
-                    volumeSeekBar5.setProgress(34);
+                    volumeSeekBar4.setProgress(34);
+                    volumeSeekBar5.setProgress(1);
                     imageId=R.drawable.rectanglesunny;
                    // songTheme2.setBackgroundResource(R.drawable.rectanglesunny);
                     try {
@@ -883,16 +888,16 @@ public class SecondActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     allprogress1=19;
-                    allprogress2=0;
+                    allprogress2=1;
                     allprogress3=7;
-                    allprogress4=0;
-                    allprogress5=85;
+                    allprogress4=85;
+                    allprogress5=1;
 
                     volumeSeekBar1.setProgress(19);
-                    volumeSeekBar2.setProgress(0);
+                    volumeSeekBar2.setProgress(1);
                     volumeSeekBar3.setProgress(7);
-                    volumeSeekBar4.setProgress(0);
-                    volumeSeekBar5.setProgress(85);
+                    volumeSeekBar4.setProgress(85);
+                    volumeSeekBar5.setProgress(1);
 
                     imageId=R.drawable.rectanglesnow;
 
@@ -924,13 +929,13 @@ public class SecondActivity extends Activity {
                     allprogress1=34;
                     allprogress2=69;
                     allprogress3=49;
-                    allprogress4=13;
-                    allprogress5=34;
+                    allprogress4=34;
+                    allprogress5=13;
                     volumeSeekBar1.setProgress(34);
                     volumeSeekBar2.setProgress(69);
                     volumeSeekBar3.setProgress(49);
-                    volumeSeekBar4.setProgress(13);
-                    volumeSeekBar5.setProgress(34);
+                    volumeSeekBar4.setProgress(34);
+                    volumeSeekBar5.setProgress(13);
 
                     imageId=R.drawable.rectanglerain;
 
@@ -958,16 +963,16 @@ public class SecondActivity extends Activity {
             playList4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    allprogress1=70;
+                    allprogress1=83;
                     allprogress2=9;
                     allprogress3=1;
-                    allprogress4=1;
-                    allprogress5=29;
-                    volumeSeekBar1.setProgress(83);
-                    volumeSeekBar2.setProgress(9);
+                    allprogress4=62;
+                    allprogress5=1;
+                    volumeSeekBar1.setProgress(92);
+                    volumeSeekBar2.setProgress(38);
                     volumeSeekBar3.setProgress(1);
-                    volumeSeekBar4.setProgress(1);
-                    volumeSeekBar5.setProgress(29);
+                    volumeSeekBar4.setProgress(62);
+                    volumeSeekBar5.setProgress(1);
 
                   //  songTheme2.setBackgroundResource(R.drawable.rectanglebird);
 
@@ -998,13 +1003,13 @@ public class SecondActivity extends Activity {
                     allprogress1=40;
                     allprogress2=1;
                     allprogress3=18;
-                    allprogress4=64;
-                    allprogress5=28;
+                    allprogress4=28;
+                    allprogress5=64;
                     volumeSeekBar1.setProgress(40);
                     volumeSeekBar2.setProgress(1);
                     volumeSeekBar3.setProgress(18);
-                    volumeSeekBar4.setProgress(64);
-                    volumeSeekBar5.setProgress(28);
+                    volumeSeekBar4.setProgress(28);
+                    volumeSeekBar5.setProgress(64);
                    // songTheme2.setBackgroundResource(R.drawable.rectangleriver);
 
                     imageId=R.drawable.rectangleriver;

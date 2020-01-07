@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
     static LinearLayout songTheme1;
      static Boolean intentBoolean=false;
 
-    static String coordTempInformation;
     //song controller
     static Button playbutton;
    static boolean isPlayingBoolean = false;
@@ -145,11 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     addresss = listAddresses.get(0).getSubLocality() + "\n";
                     Log.i("current location:",addresss);
                     try {
-//                        mediaPlayerRain.reset();
-//                        mediaPlayerRain2.reset();
-//                        mediaPlayerRain3.reset();
-//                        mediaPlayerRain4.reset();
-//                        mediaPlayerRain5.reset();
+
                         DownloadTask task = new DownloadTask();
 
 //                        String encodedCityName = URLEncoder.encode(addresss.toString(), "UTF-8");
@@ -256,9 +251,12 @@ public class MainActivity extends AppCompatActivity {
 
                     String description =jsonWeatherPart.getString("description");
 
+                    String upperString = description.substring(0,1).toUpperCase() + description.substring(1);
+
+
                     if (!jsonMain.equals("") && !description.equals("")){
 
-                        weatherInformation += description;
+                        weatherInformation += upperString;
                     }
 
 //                    if(main.equals("Haze")){
@@ -473,30 +471,39 @@ public class MainActivity extends AppCompatActivity {
                 //{"coord":{"lon":76.25,"lat":9.96},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":31,"pressure":1011,"humidity":66,"temp_min":31,"temp_max":31},"visibility":4000,"wind":{"speed":1.5,"deg":210},"clouds":{"all":96},"dt":1573623100,"sys":{"type":1,"id":9211,"country":"IN","sunrise":1573606121,"sunset":1573648193},"timezone":19800,"id":1273874,"name":"Kochi","cod":200}
 
                 String coordInfo = jsonCoordObject.getString("main");
-                Log.i("coord content", coordInfo);
+                Log.i("coord contentTemp", coordInfo);
 
 //                JSONArray coordInfoArray = new JSONArray(coordInfo);
 
                 JSONObject coordObject= new JSONObject(coordInfo);
-                coordTempInformation = coordObject.getString("temp");
-                String coordPressureInformation = coordObject.getString("pressure");
+               String coordTempInformation = coordObject.getString("temp");
+                //String coordPressureInformation = coordObject.getString("pressure");
                 String coordHumidityInformation = coordObject.getString("humidity");
-                int tempInt = Integer.parseInt(String.valueOf(coordTempInformation));
-                String tempString = String.valueOf(tempInt);
-                Log.i("tempInt", String.valueOf(tempInt));
 
+//                int tempInt = Integer.parseInt(String.valueOf(coordTempInformation));
+//                String tempString = String.valueOf(tempInt);
+
+//                Log.i("tempInt", coordTempInformation);
+                double kms = Double.parseDouble(coordTempInformation);
+
+                int x = (int)kms;
+
+                String test = String.format("%.0f", kms);
 
 
                 if(!coordTempInformation.equals("")) {
                    // coordTextView.setText("temp:"+coordTempInformation+"\u2103"+"\rpressure:"+coordPressureInformation+""+"\nHumidity:"+coordHumidityInformation);
-                    temp.setText(coordTempInformation);
+                    temp.setText(test);
 //                    Typeface typeface = getResources().getFont(R.font.robotoslabthin);
 //                    temp.setTypeface(typeface);
 
                     humidty.setText(coordHumidityInformation+"%");
+                    Log.i("tempInthum", coordHumidityInformation);
+
+
 
                 }else {
-                  //  Toast.makeText(getApplicationContext(),"Searching for gps :",Toast.LENGTH_LONG).show();
+                   Toast.makeText(getApplicationContext(),"couldnot load temp :",Toast.LENGTH_LONG).show();
                 }
 
             } catch (Exception e) {
@@ -510,12 +517,14 @@ public class MainActivity extends AppCompatActivity {
                 //{"coord":{"lon":76.25,"lat":9.96},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":31,"pressure":1011,"humidity":66,"temp_min":31,"temp_max":31},"visibility":4000,"wind":{"speed":1.5,"deg":210},"clouds":{"all":96},"dt":1573623100,"sys":{"type":1,"id":9211,"country":"IN","sunrise":1573606121,"sunset":1573648193},"timezone":19800,"id":1273874,"name":"Kochi","cod":200}
 
                 String coordInfo = jsonWindObject.getString("wind");
-                Log.i("coord content", coordInfo);
+                Log.i("coord contentin wind", coordInfo);
 
 //                JSONArray coordInfoArray = new JSONArray(coordInfo);
 
                 JSONObject coordObject= new JSONObject(coordInfo);
                 String coordWindInformation = coordObject.getString("speed");
+                Log.i("tempInthum", coordWindInformation);
+
 
 
                 if(!coordWindInformation.equals("")) {
@@ -544,7 +553,7 @@ public class MainActivity extends AppCompatActivity {
                 //{"coord":{"lon":76.25,"lat":9.96},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50d"}],"base":"stations","main":{"temp":31,"pressure":1011,"humidity":66,"temp_min":31,"temp_max":31},"visibility":4000,"wind":{"speed":1.5,"deg":210},"clouds":{"all":96},"dt":1573623100,"sys":{"type":1,"id":9211,"country":"IN","sunrise":1573606121,"sunset":1573648193},"timezone":19800,"id":1273874,"name":"Kochi","cod":200}
 
                 String coordInfo = jsonCloudObject.getString("clouds");
-                Log.i("coord content", coordInfo);
+                Log.i("coord contentclouds", coordInfo);
 
 //                JSONArray coordInfoArray = new JSONArray(coordInfo);
 
@@ -742,7 +751,7 @@ public class MainActivity extends AppCompatActivity {
 //                    String encodedCityName = URLEncoder.encode(cityName.getText().toString(), "UTF-8");
                     //http://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
 
-                    task.execute("https://openweathermap.org/data/2.5/weather?q=" + selectedItem + "&appid=b6907d289e10d714a6e88b30761fae22");
+                    task.execute("https://openweathermap.org/data/2.5/weather?q="+ selectedItem +"&appid=b6907d289e10d714a6e88b30761fae22");
 
                     InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     mgr.hideSoftInputFromWindow(autoSuggestion.getWindowToken(), 0);
