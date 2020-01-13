@@ -13,14 +13,14 @@
     },
     {
       "name": "Clouds",
-      "image":"rain",
       "song1":"song1",
       "song2":"song2",
       "song3":"song3",
       "song4":"song4",
       "song5":"song5",
-      "playlistname": "Clouds",
-      "songtheme":"rectanglerain"
+      "playlistname": "Clear",
+      "image":"clear",
+      "songtheme":"rectanglesunny"
 
     },
     {

@@ -855,13 +855,13 @@ public class SecondActivity extends Activity {
                     allprogress1=71;
                     allprogress2=6;
                     allprogress3=6;
-                    allprogress4=34;
-                    allprogress5=1;
+                    allprogress4=1;
+                    allprogress5=34;
                     volumeSeekBar1.setProgress(71);
                     volumeSeekBar2.setProgress(6);
                     volumeSeekBar3.setProgress(6);
-                    volumeSeekBar4.setProgress(34);
-                    volumeSeekBar5.setProgress(1);
+                    volumeSeekBar4.setProgress(1);
+                    volumeSeekBar5.setProgress(34);
                     imageId=R.drawable.rectanglesunny;
                    // songTheme2.setBackgroundResource(R.drawable.rectanglesunny);
                     try {

@@ -5,8 +5,8 @@
       "progress1":"34",
       "progress2":"69",
       "progress3":"49",
-      "progress4":"13",
-      "progress5":"34"
+      "progress4":"34",
+      "progress5":"13"
 
     },
     {
@@ -14,15 +14,15 @@
       "progress1":"71",
       "progress2":"6",
       "progress3":"6",
-      "progress4":"1",
-      "progress5":"34"
+      "progress4":"34",
+      "progress5":"1"
     },{
       "name": "Clouds",
       "progress1":"71",
       "progress2":"6",
       "progress3":"6",
-      "progress4":"1",
-      "progress5":"34"
+      "progress4":"34",
+      "progress5":"1"
     },
     {
       "name": "Thunderstorm",
@@ -37,40 +37,40 @@
       "progress1":"71",
       "progress2":"6",
       "progress3":"6",
-      "progress4":"1",
-      "progress5":"34"
+      "progress4":"34",
+      "progress5":"1"
     },
     {
       "name": "Snow",
       "progress1":"19",
       "progress2":"1",
       "progress3":"7",
-      "progress4":"1",
-      "progress5":"85"
+      "progress4":"85",
+      "progress5":"1"
     },
     {
       "name": "Mist",
       "progress1":"19",
       "progress2":"1",
       "progress3":"7",
-      "progress4":"1",
-      "progress5":"85"
+      "progress4":"85",
+      "progress5":"1"
     },
     {
       "name": "Fog",
       "progress1":"19",
       "progress2":"1",
       "progress3":"7",
-      "progress4":"1",
-      "progress5":"85"
+      "progress4":"85",
+      "progress5":"1"
     },
     {
       "name": "Drizzle",
       "progress1":"34",
       "progress2":"69",
       "progress3":"49",
-      "progress4":"13",
-      "progress5":"34"
+      "progress4":"34",
+      "progress5":"13"
     },
     {
       "name": "PlayList1",

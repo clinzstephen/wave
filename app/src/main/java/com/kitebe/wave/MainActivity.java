@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
    // TextView songName;
     TextView coordTextView;
     AudioManager audioManager;
-    static MediaPlayer mediaPlayerRain,mediaPlayerRain2,mediaPlayerRain3,mediaPlayerRain4,mediaPlayerRain5;
+    static MediaPlayer mediaPlayerRain,mediaPlayerRain2,mediaPlayerRain3,mediaPlayerRain4,mediaPlayerRain5,mediaPlayerRain6;
     ConstraintLayout backgroungImage ;
     String jsonMain;
     static String plname;
@@ -401,6 +401,10 @@ public class MainActivity extends AppCompatActivity {
                         mediaPlayerRain5 = MediaPlayer.create(getApplicationContext(),resourceSongId5);
                         mediaPlayerRain5.start();
                         mediaPlayerRain5.setVolume(1 - log5, 1 - log5);
+
+                        mediaPlayerRain6 = MediaPlayer.create(getApplicationContext(),resourceSongId5);
+                       // mediaPlayerRain6.start();
+                        mediaPlayerRain6.setVolume(1 - log5, 1 - log5);
 
 
                         //Notification notication notification
@@ -1057,6 +1061,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onUserLeaveHint() {
         super.onUserLeaveHint();
+        mediaPlayerRain6.stop();
+
 //        mediaPlayerRain.stop();
 //        mediaPlayerRain2.stop();
 //        mediaPlayerRain3.stop();
